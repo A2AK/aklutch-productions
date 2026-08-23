@@ -50,7 +50,7 @@ a { color: inherit; text-decoration: none; }
 .nav-links .nav-cta { color: #130912; background: var(--gold); }
 .nav-toggle { display: none; }
 .section-shell { width: min(var(--max), calc(100% - 40px)); margin: 0 auto; position: relative; z-index: 1; }
-#events, #mission, #venues, #contact { scroll-margin-top: 110px; }
+#events, #about, #mission, #venues, #contact { scroll-margin-top: 110px; }
 .hero { min-height: 760px; display: grid; grid-template-columns: 1fr .88fr; gap: 44px; align-items: center; padding: 76px 0 64px; }
 .eyebrow { display: inline-flex; align-items: center; gap: 10px; color: var(--gold); font-weight: 900; letter-spacing: .18em; text-transform: uppercase; font-size: .76rem; }
 .eyebrow span { width: 34px; height: 2px; border-radius: 9px; background: linear-gradient(90deg, var(--gold), var(--rose)); }
@@ -99,7 +99,7 @@ h3 { font-size: 1.45rem; line-height: 1.04; }
 .marquee-track { display: flex; gap: 24px; width: max-content; padding: 18px 0; animation: scroll 27s linear infinite; color: var(--text); font-weight: 900; text-transform: uppercase; letter-spacing: .12em; }
 .marquee b { color: var(--orange); }
 @keyframes scroll { to { transform: translateX(-50%); } }
-.events-section, .mission-section, .split-section, .quote-section, .contact-section { padding: 96px 0; }
+.events-section, .about-section, .mission-section, .split-section, .quote-section, .contact-section { padding: 96px 0; }
 .section-heading { display: grid; grid-template-columns: .9fr 1.1fr; gap: 24px; align-items: end; margin-bottom: 30px; }
 .section-heading p:not(.eyebrow), .split-copy p, .mission-card p:not(.eyebrow), .contact-panel p { color: var(--muted); font-size: 1.1rem; line-height: 1.55; }
 .event-grid { display: grid; gap: 18px; }
@@ -131,6 +131,17 @@ h3 { font-size: 1.45rem; line-height: 1.04; }
 .ticket-checkout-heading p:not(.eyebrow) { max-width: 700px; margin-bottom: 0; color: var(--muted); line-height: 1.5; }
 .ticket-embed-shell { min-height: 720px; overflow: hidden; border: 1px solid var(--line); border-radius: 22px; background: #fff; }
 .ticket-embed-shell iframe { display: block; width: 100%; min-height: 720px; border: 0; }
+.about-section { display: grid; grid-template-columns: minmax(300px, .82fr) minmax(0, 1.18fr); gap: 24px; align-items: stretch; }
+.about-photo, .about-copy { border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; background: var(--surface); }
+.about-photo { position: relative; min-height: 620px; margin: 0; box-shadow: 0 28px 74px rgba(0,0,0,.28); }
+.about-photo:after { content: ""; position: absolute; inset: 45% 0 0; background: linear-gradient(transparent, rgba(6,4,10,.82)); pointer-events: none; }
+.about-photo img { width: 100%; height: 100%; display: block; object-fit: cover; object-position: center 38%; }
+.about-photo figcaption { position: absolute; z-index: 1; left: 24px; right: 24px; bottom: 22px; color: var(--text); font-size: .82rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+.about-copy { display: flex; flex-direction: column; justify-content: center; padding: clamp(34px, 5vw, 64px); background: linear-gradient(145deg, rgba(255,122,61,.13), rgba(143,92,255,.1) 58%, rgba(255,255,255,.055)); }
+.about-copy h2 { max-width: 720px; margin: 16px 0 26px; line-height: 1.02; }
+.about-copy p:not(.eyebrow) { max-width: 720px; margin: 0; color: var(--muted); font-size: 1.06rem; line-height: 1.7; }
+.about-copy .about-lead { color: var(--text); font-size: clamp(1.12rem, 1.8vw, 1.34rem); }
+.about-copy .about-lead + p { margin-top: 20px; }
 .mission-section { display: grid; grid-template-columns: .86fr 1.14fr; gap: 22px; align-items: stretch; }
 .mission-card, .principles article, .split-section, .quote-section blockquote, .contact-panel { border: 1px solid var(--line); background: var(--surface); border-radius: var(--radius); }
 .mission-card { padding: 34px; }
@@ -155,7 +166,7 @@ h3 { font-size: 1.45rem; line-height: 1.04; }
   .nav-toggle { display: inline-flex; background: var(--surface); color: var(--text); border: 1px solid var(--line); padding: 10px 14px; border-radius: 999px; font-weight: 900; }
   .nav-links { position: fixed; top: 74px; left: 20px; right: 20px; display: none; flex-direction: column; align-items: stretch; padding: 12px; border: 1px solid var(--line); border-radius: 20px; background: rgba(11,6,19,.94); }
   .nav-links.is-open { display: flex; }
-  .hero, .section-heading, .mission-section, .split-section { grid-template-columns: 1fr; }
+  .hero, .section-heading, .about-section, .mission-section, .split-section { grid-template-columns: 1fr; }
   .hero { padding-top: 46px; min-height: auto; }
   .hero-art { min-height: 520px; }
   h1 { font-size: clamp(3.2rem, 17vw, 6rem); }
@@ -167,6 +178,8 @@ h3 { font-size: 1.45rem; line-height: 1.04; }
   .event-date { min-height: 118px; }
   .ticket-checkout-heading { align-items: stretch; flex-direction: column; }
   .ticket-checkout-heading .button { width: 100%; }
+  .about-photo { min-height: 0; aspect-ratio: 4 / 5; }
+  .about-photo img { object-position: center 34%; }
   .contact-panel { align-items: stretch; flex-direction: column; }
   .button.large { width: 100%; }
 }
@@ -186,8 +199,8 @@ h3 { font-size: 1.45rem; line-height: 1.04; }
   .microphone { transform: scale(.82); transform-origin: bottom right; }
   .ticket-checkout { padding: 18px; }
   .ticket-embed-shell, .ticket-embed-shell iframe { min-height: 760px; }
-  .events-section, .mission-section, .split-section, .quote-section, .contact-section { padding: 62px 0; }
-  .mission-card, .split-section, .quote-section blockquote, .contact-panel { padding: 24px; }
+  .events-section, .about-section, .mission-section, .split-section, .quote-section, .contact-section { padding: 62px 0; }
+  .about-copy, .mission-card, .split-section, .quote-section blockquote, .contact-panel { padding: 24px; }
   .principles article { grid-template-columns: 1fr; }
   .principles span { margin-bottom: 12px; }
 }

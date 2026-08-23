@@ -7,6 +7,7 @@ Static landing page for **aklutchproductions.com** and **aklutchproduction.com**
 - `styles.css` — full responsive visual design
 - `script.js` — small mobile-nav behavior
 - `assets/josh-adams-live-homes-2026.webp` — user-supplied November 13 headliner image
+- `assets/anson-kairys-aklutch-founder.webp` — founder photo for the About section
 - `assets/standup-comedy-homes-campus-july-18.png` — first-event flyer
 - `assets/logo-mark.svg` / `assets/favicon.svg` — generated logo mark
 
