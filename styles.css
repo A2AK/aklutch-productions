@@ -84,12 +84,13 @@ h3 { font-size: 1.45rem; line-height: 1.04; }
 .ticket-main h2 { position: relative; z-index: 1; margin-top: 26px; max-width: 390px; font-size: clamp(3.35rem, 5.5vw, 5.15rem); line-height: .84; text-transform: uppercase; }
 .ticket-main h2 span { display: block; color: var(--gold); }
 .ticket-main .ticket-venue { position: relative; z-index: 2; width: fit-content; margin-top: 22px; padding: 9px 12px; border: 1px solid rgba(255,255,255,.14); border-radius: 999px; background: rgba(11,6,19,.78); color: var(--text); font-size: 1rem; font-weight: 800; }
-.ticket-side { z-index: 3; top: 18px; right: -14px; width: 238px; min-height: 90px; padding: 10px 14px 10px 10px; border-radius: 999px; transform: rotate(3deg); display: grid; grid-template-columns: 68px 1fr; gap: 12px; align-items: center; background: linear-gradient(145deg, rgba(18,8,13,.94), rgba(45,27,57,.9)); }
-.ticket-side img { width: 68px; height: 68px; display: block; object-fit: cover; object-position: 54% 31%; border-radius: 50%; border: 2px solid rgba(255,200,87,.8); box-shadow: 0 0 0 4px rgba(255,200,87,.11); }
-.ticket-side strong { display: block; font-size: 1rem; line-height: 1.08; }
+.ticket-side { z-index: 3; top: 12px; right: -18px; width: 286px; min-height: 112px; padding: 12px 18px 12px 12px; border-radius: 999px; transform: rotate(3deg); display: grid; grid-template-columns: 86px 1fr; gap: 15px; align-items: center; background: linear-gradient(145deg, rgba(18,8,13,.94), rgba(45,27,57,.9)); }
+.ticket-side img { width: 86px; height: 86px; display: block; object-fit: cover; object-position: 54% 31%; border-radius: 50%; border: 3px solid rgba(255,200,87,.84); box-shadow: 0 0 0 5px rgba(255,200,87,.11); }
+.ticket-side strong { display: block; font-size: 1.16rem; line-height: 1.06; }
 .orb { position: absolute; border-radius: 999px; filter: blur(.2px); }
-.orb-one { width: 48px; height: 48px; right: 2%; bottom: 10%; background: var(--rose); box-shadow: 0 0 54px rgba(255,61,129,.48); }
-.orb-two { width: 34px; height: 34px; right: 18%; top: 18%; background: var(--cyan); box-shadow: 0 0 55px rgba(103,232,249,.5); }
+.orb-one { z-index: 2; width: 48px; height: 48px; right: 2%; bottom: 10%; background: var(--rose); box-shadow: 0 0 54px rgba(255,61,129,.48), -72px -86px 120px rgba(255,61,129,.25), -155px -178px 190px rgba(255,61,129,.12); }
+.orb-two { width: 30px; height: 30px; left: 4%; top: 28%; background: var(--cyan); box-shadow: 0 0 50px rgba(103,232,249,.46); }
+.orb-three { width: 22px; height: 22px; right: 4%; top: 50%; background: var(--cyan); box-shadow: 0 0 42px rgba(103,232,249,.4); opacity: .82; }
 .marquee { position: relative; z-index: 1; overflow: hidden; border-block: 1px solid var(--line); background: rgba(255,255,255,.04); }
 .marquee-track { display: flex; gap: 24px; width: max-content; padding: 18px 0; animation: scroll 27s linear infinite; color: var(--text); font-weight: 900; text-transform: uppercase; letter-spacing: .12em; }
 .marquee b { color: var(--orange); }
@@ -185,9 +186,11 @@ h3 { font-size: 1.45rem; line-height: 1.04; }
   .ticket-main { min-height: 475px; padding: 26px; }
   .ticket-main h2 { max-width: 330px; font-size: clamp(3.1rem, 14vw, 4.35rem); }
   .ticket-main .ticket-venue { max-width: 82%; border-radius: 18px; line-height: 1.3; }
-  .ticket-side { top: 10px; right: -2px; width: 198px; min-height: 74px; grid-template-columns: 54px 1fr; gap: 10px; padding: 8px 12px 8px 8px; }
-  .ticket-side img { width: 54px; height: 54px; }
-  .ticket-side strong { font-size: .87rem; }
+  .ticket-side { top: 4px; right: -3px; width: 238px; min-height: 88px; grid-template-columns: 66px 1fr; gap: 12px; padding: 10px 14px 10px 10px; }
+  .ticket-side img { width: 66px; height: 66px; }
+  .ticket-side strong { font-size: 1rem; }
+  .orb-two { left: 1%; top: 32%; }
+  .orb-three { right: 1%; top: 52%; }
   .events-section, .about-section, .mission-section, .split-section, .quote-section, .contact-section { padding: 62px 0; }
   .about-copy, .mission-card, .split-section, .quote-section blockquote, .contact-panel { padding: 24px; }
   .event-actions { display: grid; }
