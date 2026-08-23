@@ -20,10 +20,9 @@ nav?.querySelectorAll('a').forEach((link) => {
   });
 });
 
-document.querySelectorAll('[data-carousel]').forEach((carousel) => {
+const initializeCarousel = (carousel, initialIndex = 0) => {
   const slides = [...carousel.querySelectorAll('[data-slide]')];
   const dots = [...carousel.querySelectorAll('[data-carousel-dot]')];
-  const status = carousel.querySelector('[data-carousel-status]');
   const previous = carousel.querySelector('[data-carousel-previous]');
   const next = carousel.querySelector('[data-carousel-next]');
   let activeIndex = 0;
@@ -44,11 +43,6 @@ document.querySelectorAll('[data-carousel]').forEach((carousel) => {
       if (isActive) dot.setAttribute('aria-current', 'true');
       else dot.removeAttribute('aria-current');
     });
-
-    if (status) {
-      const caption = slides[activeIndex].querySelector('figcaption')?.textContent?.trim();
-      status.textContent = `${activeIndex + 1} of ${slides.length}${caption ? ` · ${caption}` : ''}`;
-    }
   };
 
   previous?.addEventListener('click', () => showSlide(activeIndex - 1));
@@ -82,5 +76,63 @@ document.querySelectorAll('[data-carousel]').forEach((carousel) => {
     pointerStartX = null;
   });
 
-  showSlide(0);
+  showSlide(initialIndex);
+  const api = {
+    getActiveIndex: () => activeIndex,
+    showSlide,
+  };
+  carousel.carouselApi = api;
+  return api;
+};
+
+document.querySelectorAll('[data-carousel]').forEach((carousel) => {
+  initializeCarousel(carousel);
+});
+
+document.addEventListener('click', (event) => {
+  const expandButton = event.target.closest('[data-carousel-expand]');
+  if (!expandButton) return;
+
+  const sourceCarousel = expandButton.closest('[data-carousel]');
+  if (!sourceCarousel?.carouselApi) return;
+
+  const dialog = document.createElement('dialog');
+  dialog.className = 'photo-dialog';
+  dialog.setAttribute('aria-label', 'Expanded July show photo carousel');
+
+  const shell = document.createElement('div');
+  shell.className = 'photo-dialog-shell';
+
+  const closeButton = document.createElement('button');
+  closeButton.className = 'photo-dialog-close';
+  closeButton.type = 'button';
+  closeButton.setAttribute('aria-label', 'Close expanded photos');
+  closeButton.textContent = '×';
+
+  const expandedCarousel = sourceCarousel.cloneNode(true);
+  expandedCarousel.classList.remove('event-flyer', 'event-photo');
+  expandedCarousel.classList.add('carousel-expanded');
+  expandedCarousel.setAttribute('aria-label', 'Expanded photos from the July 18 comedy show');
+  expandedCarousel.querySelector('[data-carousel-expand]')?.remove();
+
+  shell.append(expandedCarousel, closeButton);
+  dialog.append(shell);
+  document.body.append(dialog);
+
+  initializeCarousel(expandedCarousel, sourceCarousel.carouselApi.getActiveIndex());
+
+  closeButton.addEventListener('click', () => dialog.close());
+  dialog.addEventListener('click', (dialogEvent) => {
+    if (dialogEvent.target === dialog) dialog.close();
+  });
+  dialog.addEventListener('close', () => {
+    sourceCarousel.carouselApi.showSlide(expandedCarousel.carouselApi.getActiveIndex());
+    expandButton.setAttribute('aria-expanded', 'false');
+    dialog.remove();
+    expandButton.focus();
+  }, { once: true });
+
+  expandButton.setAttribute('aria-expanded', 'true');
+  dialog.showModal();
+  closeButton.focus();
 });
