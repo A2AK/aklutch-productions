@@ -19,5 +19,5 @@ Then open <http://localhost:8080> from this folder.
 
 ## Notes
 - Contact CTA currently uses `anson@a2ai.us`.
-- The upcoming event is Josh Adams at HOMES Campus on November 13, 2026: doors 7:30 PM, show 8:00 PM, tickets $25 through the embedded TixFox checkout, with the host forthcoming.
+- The upcoming event is Josh Adams at HOMES Campus on November 13, 2026: doors 7:30 PM, show 8:00 PM, and $25 tickets linked directly to TixFox, with the host forthcoming.
 - The July 18 HOMES Campus sellout remains listed as a completed show.
