@@ -62,9 +62,11 @@
         <div class="spotlight spotlight-a"></div>
         <div class="spotlight spotlight-b"></div>
         <div class="ticket-card ticket-main">
-          <span class="ticket-kicker">Nov 13 · 8:00 PM</span>
-          <h2>Josh Adams Live</h2>
-          <p>HOMES Campus · Ann Arbor, MI</p>
+          <div class="ticket-date" aria-label="Friday, November 13 at 8 PM">
+            <span>Nov</span><strong>13</strong><em>Fri · 8 PM</em>
+          </div>
+          <h2>Josh Adams <span>Live</span></h2>
+          <p class="ticket-venue">HOMES Campus · Ann Arbor, MI</p>
           <div class="microphone" aria-hidden="true">
             <span></span><i></i>
           </div>
@@ -89,17 +91,16 @@
       <div class="section-heading">
         <p class="eyebrow"><span></span> Event calendar</p>
         <h2>Next up: Josh Adams at HOMES Campus.</h2>
-        <p>Friday, November 13. Doors at 7:30 PM, show at 8:00 PM, and tickets are $25. Stay tuned for the ticket link and more updates.</p>
+        <p>Friday, November 13. Doors at 7:30 PM, show at 8:00 PM, and tickets are $25. Tickets are on sale now.</p>
       </div>
       <div class="event-grid">
-        <article class="event-card featured-event event-with-flyer">
-          <a class="event-flyer" href="https://www.seenthemagazine.com/people/comedian-josh-adams-from-class-clown-to-crowd-favorite/article_1a406361-047b-4197-8be0-3cd105f1fef3.html" target="_blank" rel="noopener" aria-label="Read the SEEN Magazine profile of Josh Adams">
-            <img src="assets/josh-adams-seen-headshot.webp" alt="Comedian Josh Adams performing onstage with a microphone" />
-            <span class="photo-credit">Lauren Jeziorski / SEEN</span>
-          </a>
+        <article class="event-card featured-event event-with-photo">
+          <div class="event-flyer event-photo">
+            <img src="assets/josh-adams-live-homes-2026.webp" alt="Comedian Josh Adams performing with a microphone" />
+          </div>
           <div class="event-date"><strong>Nov</strong><span>13</span><em>Friday</em></div>
           <div class="event-info">
-            <div class="event-meta"><span class="status">Tickets $25</span><span>8:00 PM · doors 7:30</span><span>Ann Arbor, MI</span></div>
+            <div class="event-meta"><span class="status">Tickets on sale</span><span>8:00 PM · doors 7:30</span><span>Ann Arbor, MI</span></div>
             <h3>Josh Adams Live at HOMES Campus</h3>
             <p>Detroit comedian and <em>Apollo Live</em> winner Josh Adams headlines AKlutch Productions’ return to HOMES Campus, featuring Ann Arbor comedian and veteran television writer Ned Rice.</p>
             <ul>
@@ -107,11 +108,24 @@
               <li>Headliner: Josh Adams</li>
               <li>Featuring: Ned Rice</li>
               <li>Host / MC: To be announced</li>
-              <li>Tickets: $25 · link coming soon</li>
+              <li>General admission: $25</li>
             </ul>
-            <p class="event-update">Stay tuned for the ticket link, host announcement, and more updates.</p>
+            <a class="button primary event-ticket-button" href="#tickets">Buy tickets — $25</a>
           </div>
         </article>
+        <section id="tickets" class="ticket-checkout" aria-labelledby="ticket-checkout-title">
+          <div class="ticket-checkout-heading">
+            <div>
+              <p class="eyebrow"><span></span> Tickets</p>
+              <h3 id="ticket-checkout-title">Reserve your seat for Josh Adams Live.</h3>
+              <p>General admission is $25. Doors open at 7:30 PM and the show starts at 8:00 PM.</p>
+            </div>
+            <a class="button ghost" href="https://tixfox.co/embed/e/4XVNGeAZ7Z" target="_blank" rel="noopener">Open ticket checkout</a>
+          </div>
+          <div class="ticket-embed-shell">
+            <iframe src="https://tixfox.co/embed/e/4XVNGeAZ7Z" width="100%" height="720" frameborder="0" allow="payment" loading="lazy" title="Purchase tickets for Josh Adams Live at HOMES Campus"></iframe>
+          </div>
+        </section>
         <article class="event-card featured-event event-with-flyer">
           <a class="event-flyer" href="assets/standup-comedy-homes-campus-july-18.png" aria-label="Open July 18 stand-up comedy flyer">
             <img src="assets/standup-comedy-homes-campus-july-18.png" alt="Flyer for Stand-Up Comedy at HOMES Campus Ann Arbor Brewery with Derek Richards, Ned Rice, hosted by Pam Krugman, Saturday July 18 at 8:00 PM" />
@@ -145,7 +159,7 @@
     <section id="mission" class="section-shell mission-section">
       <div class="mission-card">
         <p class="eyebrow"><span></span> What AKlutch stands for</p>
-        <h2>Professional production. Local warmth. Performer respect.</h2>
+        <h2><span>Professional production.</span><span>Local warmth.</span><span>Performer respect.</span></h2>
         <p>AKlutch Productions exists to bring good people into great spaces for comedy that feels alive, generous, and local. The company is built around a simple premise: when performers are treated fairly and venues are chosen with care, audiences get a better night out.</p>
       </div>
       <div class="principles">

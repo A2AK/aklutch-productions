@@ -6,7 +6,7 @@ Static landing page for **aklutchproductions.com** and **aklutchproduction.com**
 - `index.html` — site content and structure
 - `styles.css` — full responsive visual design
 - `script.js` — small mobile-nav behavior
-- `assets/josh-adams-seen-headshot.webp` — cropped November 13 headliner image; photo by Lauren Jeziorski/SEEN
+- `assets/josh-adams-live-homes-2026.webp` — user-supplied November 13 headliner image
 - `assets/standup-comedy-homes-campus-july-18.png` — first-event flyer
 - `assets/logo-mark.svg` / `assets/favicon.svg` — generated logo mark
 
@@ -18,5 +18,5 @@ Then open <http://localhost:8080> from this folder.
 
 ## Notes
 - Contact CTA currently uses `anson@a2ai.us`.
-- The upcoming event is Josh Adams at HOMES Campus on November 13, 2026: doors 7:30 PM, show 8:00 PM, tickets $25, with the ticket link and host forthcoming.
+- The upcoming event is Josh Adams at HOMES Campus on November 13, 2026: doors 7:30 PM, show 8:00 PM, tickets $25 through the embedded TixFox checkout, with the host forthcoming.
 - The July 18 HOMES Campus sellout remains listed as a completed show.
